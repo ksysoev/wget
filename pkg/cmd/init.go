@@ -73,6 +73,7 @@ func InitCommands(version string) *cobra.Command {
 	args.configDir = cmp.Or(args.configDir, os.Getenv("WSGET_CONFIG_DIR"))
 
 	cmd.AddCommand(initMacroDownloadCommand(args))
+	cmd.AddCommand(newUpdateCommand())
 
 	return cmd
 }
